@@ -1,0 +1,22 @@
+  
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+       layout:decorator="template"> 
+<head>
+<meta charset="utf-8"/>
+<title>Produits</title>
+</head>
+<body> 
+<div layout:fragment="content">
+ <table class="table table-responsive">
+    <tr> <th>Id</th><th>Name</th><th>Price</th></tr>
+    <tr th:each="p:${listProducts}">
+       <td th:text="${p.id}"></td>
+       <td th:text="${p.nameProduct}"></td>
+       <td th:text="${p.price}"></td>
+    </tr>
+ </table>
+</div> 
+</body>
+</html>
